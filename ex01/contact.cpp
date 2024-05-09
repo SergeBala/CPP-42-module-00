@@ -1,6 +1,9 @@
 
 #include "Contact.hpp"
 #include <iostream>
+#include <string>
+#include <cctype>
+#include "utils_phonebook.hpp"
 
 // Constructor
 Contact::Contact()
@@ -86,4 +89,70 @@ void Contact::setPhoneNumber(const std::string& phone_number)
 
 void Contact::setDarkestSecret(const std::string& darkest_secret) {
     _darkest_secret = darkest_secret;
+}
+
+void Contact::setFieldsFromUserInput()
+{
+    std::string first_name;
+    std::string last_name;
+    std::string nickname;
+    std::string phone_number;
+    std::string darkest_secret;
+    int         is_there_info_flag = 0;
+
+    std::cout << "Enter first name: ";
+    std::cin >> first_name;
+    if (!utils_phonebook::isNonEmptyString(first_name))
+    {
+        first_name = "Unknown";
+    }
+    else
+        is_there_info_flag = 1;
+    setFirstName(first_name);
+
+    std::cout << "Enter last name: ";
+    std::cin >> last_name;
+    if (!utils_phonebook::isNonEmptyString(last_name))
+    {
+        last_name = "Unknown";
+    }
+    else
+        is_there_info_flag = 1;
+    setLastName(last_name);
+
+    std::cout << "Enter nickname: ";
+    std::cin >> nickname;
+    if (!utils_phonebook::isNonEmptyString(nickname))
+    {
+        nickname = "Unknown";
+    }
+    else
+        is_there_info_flag = 1;
+    setNickname(nickname);
+
+    std::cout << "Enter phone number: ";
+    std::cin >> phone_number;
+    if (!utils_phonebook::isNonEmptyString(phone_number))
+    {
+        phone_number = "Unknown";
+    }
+    else
+        is_there_info_flag = 1;
+    setPhoneNumber(phone_number);
+
+    std::cout << "Enter darkest secret: ";
+    std::cin >> darkest_secret;
+    if (!utils_phonebook::isNonEmptyString(darkest_secret))
+    {
+        darkest_secret = "Unknown";
+    }
+    else
+        is_there_info_flag = 1;
+    setDarkestSecret(darkest_secret);
+
+    if (is_there_info_flag == 0)
+    {
+        std::cout << "A contact has to have at least some info!" << std::endl;
+        setFieldsFromUserInput();
+    }
 }

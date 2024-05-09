@@ -34,7 +34,9 @@ public:
     void setNickname(const std::string& nickname);
     void setPhoneNumber(const std::string& phone_number);
     void setDarkestSecret(const std::string& darkest_secret);
-
+    
+    //user_input
+    void setFieldsFromUserInput();
 };
 
 #endif
