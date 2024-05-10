@@ -1,5 +1,5 @@
-SRC = Phonebook.cpp Contact.cpp main.cpp
-HDRS = Phonebook.hpp Contact.hpp
+SRC = phonebook.cpp contact.cpp main.cpp utils_phonebook.cpp
+HDRS = phonebook.hpp contact.hpp utils_phonebook.hpp
 OBJ = $(SRC:.cpp=.o)
 CC = g++
 RM = rm -f

@@ -3,6 +3,10 @@
 #define contact_hpp
 
 #include <string>
+#include <iostream>
+#include <string>
+#include <cctype>
+#include "utils_phonebook.hpp"
 
 class Contact
 {
@@ -20,7 +24,10 @@ public:
     ~Contact();
 
     // Copy constructor
-    Contact::Contact(const Contact& other);
+    Contact(const Contact& other);
+
+// Assignment operator
+    Contact& operator=(const Contact& other);
 
     // Getter methods
     std::string getFirstName() const;

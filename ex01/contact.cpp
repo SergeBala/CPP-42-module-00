@@ -1,9 +1,5 @@
 
-#include "Contact.hpp"
-#include <iostream>
-#include <string>
-#include <cctype>
-#include "utils_phonebook.hpp"
+#include "contact.hpp"
 
 // Constructor
 Contact::Contact()
