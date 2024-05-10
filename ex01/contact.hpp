@@ -12,6 +12,7 @@ private:
     std::string _nickname;
     std::string _phone_number;
     std::string _darkest_secret;
+    int         _is_there_info_flag;
 
 public:
     // Constructor and Destructor
@@ -34,6 +35,7 @@ public:
     void setNickname(const std::string& nickname);
     void setPhoneNumber(const std::string& phone_number);
     void setDarkestSecret(const std::string& darkest_secret);
+    void resetFields();
     
     //user_input
     void setFieldsFromUserInput();

@@ -15,6 +15,7 @@ public:
     ~Phonebook();
 
     void addContact(const Contact& new_contact);
+    void displayContacts() const;
 };
 
 #endif

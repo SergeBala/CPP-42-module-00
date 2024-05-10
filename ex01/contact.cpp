@@ -8,6 +8,12 @@
 // Constructor
 Contact::Contact()
 {
+    _first_name = "";
+    _last_name = "";
+    _nickname = "";
+    _phone_number = "";
+    _darkest_secret = "";
+    _is_there_info_flag = 0;
     std :: cout << "Contact object created" << std :: endl;
 }
 
@@ -71,24 +77,44 @@ std::string Contact::getDarkestSecret() const
 void Contact::setFirstName(const std::string& first_name)
 {
     _first_name = first_name;
+    if (!utils_phonebook::isNonEmptyString(first_name))
+        _is_there_info_flag = 1;
 }
 
 void Contact::setLastName(const std::string& last_name) {
     _last_name = last_name;
+    if (!utils_phonebook::isNonEmptyString(last_name))
+        _is_there_info_flag = 1;
 }
 
 void Contact::setNickname(const std::string& nickname)
 {
     _nickname = nickname;
+    if (!utils_phonebook::isNonEmptyString(nickname))
+        _is_there_info_flag = 1;
 }
 
 void Contact::setPhoneNumber(const std::string& phone_number)
 {
     _phone_number = phone_number;
+    if (!utils_phonebook::isNonEmptyString(phone_number))
+        _is_there_info_flag = 1;
 }
 
 void Contact::setDarkestSecret(const std::string& darkest_secret) {
     _darkest_secret = darkest_secret;
+    if (!utils_phonebook::isNonEmptyString(darkest_secret))
+        _is_there_info_flag = 1;
+}
+
+void Contact::resetFields()
+{
+    _first_name = "";
+    _last_name = "";
+    _nickname = "";
+    _phone_number = "";
+    _darkest_secret = "";
+    _is_there_info_flag = 0;
 }
 
 void Contact::setFieldsFromUserInput()
@@ -98,7 +124,6 @@ void Contact::setFieldsFromUserInput()
     std::string nickname;
     std::string phone_number;
     std::string darkest_secret;
-    int         is_there_info_flag = 0;
 
     std::cout << "Enter first name: ";
     std::cin >> first_name;
@@ -107,7 +132,7 @@ void Contact::setFieldsFromUserInput()
         first_name = "Unknown";
     }
     else
-        is_there_info_flag = 1;
+        _is_there_info_flag = 1;
     setFirstName(first_name);
 
     std::cout << "Enter last name: ";
@@ -117,7 +142,7 @@ void Contact::setFieldsFromUserInput()
         last_name = "Unknown";
     }
     else
-        is_there_info_flag = 1;
+        _is_there_info_flag = 1;
     setLastName(last_name);
 
     std::cout << "Enter nickname: ";
@@ -127,7 +152,7 @@ void Contact::setFieldsFromUserInput()
         nickname = "Unknown";
     }
     else
-        is_there_info_flag = 1;
+        _is_there_info_flag = 1;
     setNickname(nickname);
 
     std::cout << "Enter phone number: ";
@@ -137,7 +162,7 @@ void Contact::setFieldsFromUserInput()
         phone_number = "Unknown";
     }
     else
-        is_there_info_flag = 1;
+        _is_there_info_flag = 1;
     setPhoneNumber(phone_number);
 
     std::cout << "Enter darkest secret: ";
@@ -147,12 +172,13 @@ void Contact::setFieldsFromUserInput()
         darkest_secret = "Unknown";
     }
     else
-        is_there_info_flag = 1;
+        _is_there_info_flag = 1;
     setDarkestSecret(darkest_secret);
 
-    if (is_there_info_flag == 0)
+    if (_is_there_info_flag == 0)
     {
         std::cout << "A contact has to have at least some info!" << std::endl;
+        resetFields();
         setFieldsFromUserInput();
     }
 }
