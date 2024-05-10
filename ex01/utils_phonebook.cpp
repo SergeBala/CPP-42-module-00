@@ -16,4 +16,17 @@ namespace utils_phonebook
         
         return false;
     }
+
+    void printStringNoEndl_10_chars(const std::string& my_string) 
+    {
+        if (my_string.size() < 11)
+        {
+            std::cout << std::setw(10) << std::right << my_string;
+        }    
+        else
+        {
+            std::cout << my_string.substr(0, 10);
+        }
+    
+    }
 }

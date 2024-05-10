@@ -39,6 +39,10 @@ public:
     
     //user_input
     void setFieldsFromUserInput();
+
+    //print methods
+    void printContactLineByLine() const;
+    void printContactAsTable() const;
 };
 
 #endif

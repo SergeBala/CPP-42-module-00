@@ -182,3 +182,24 @@ void Contact::setFieldsFromUserInput()
         setFieldsFromUserInput();
     }
 }
+
+void Contact::printContactLineByLine() const
+{
+    std::cout << "First name: " << _first_name << std::endl;
+    std::cout << "Last name: " << _last_name << std::endl;
+    std::cout << "Nickname: " << _nickname << std::endl;
+    std::cout << "Phone number" << _phone_number << std::endl;
+    std::cout << "Darkest secret: " << _darkest_secret << std::endl;
+}
+
+void Contact::printContactAsTable() const
+{
+    std::cout << "|";
+    utils_phonebook::printStringNoEndl_10_chars(_first_name);
+    std::cout << "|";
+    utils_phonebook::printStringNoEndl_10_chars(_last_name);
+    std::cout << "|";
+    utils_phonebook::printStringNoEndl_10_chars(_nickname);
+    std::cout << std::endl;
+
+}
