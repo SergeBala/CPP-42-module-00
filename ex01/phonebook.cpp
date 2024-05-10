@@ -1,5 +1,6 @@
 #include<phonebook.hpp>
 #include<iostream>
+#include "utils_phonebook.hpp"
 
 Phonebook::Phonebook()
 {
@@ -32,3 +33,35 @@ void Phonebook::addContact(const Contact& new_contact)
 
 //     }
 // }
+
+void Phonebook:: displayContacts_as_table() const
+{
+    std::cout << "     Index|First Name| Last Name|  Nickname" << std::endl;
+    for (int i = 0; i <= 8; i++)
+    {
+        if (_contacts[i].getIsThereInfoFlag() == 1)
+        {
+            std::cout << std::setw(10) << std::right << i;
+            _contacts[i].printContactAsTable();
+        }
+    }
+}
+
+void Phonebook::disspalyContact(int index) const
+{
+    if (index >= 0 && index <= 8)
+    {
+        if (_contacts[index].getIsThereInfoFlag() == 1)
+        {
+            _contacts[index].printContactLineByLine();
+        }
+        else
+        {
+            std::cout << "No contact at this index" << std::endl;
+        }
+    }
+    else
+    {
+        std::cout << "Invalid index" << std::endl;
+    }
+}

@@ -73,6 +73,11 @@ std::string Contact::getDarkestSecret() const
     return _darkest_secret;
 }
 
+int Contact::getIsThereInfoFlag() const
+{
+    return _is_there_info_flag;
+}
+
 // Setter methods
 void Contact::setFirstName(const std::string& first_name)
 {

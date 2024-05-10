@@ -28,6 +28,7 @@ public:
     std::string getNickname() const;
     std::string getPhoneNumber() const;
     std::string getDarkestSecret() const;
+    int getIsThereInfoFlag() const;
 
     // Setter methods
     void setFirstName(const std::string& first_name);
