@@ -3,7 +3,7 @@ HDRS = phonebook.hpp contact.hpp utils_phonebook.hpp
 OBJ = $(SRC:.cpp=.o)
 CC = g++
 RM = rm -f
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -g
 
 NAME = worst_phonebook_ever
 

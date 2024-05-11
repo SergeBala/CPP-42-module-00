@@ -47,7 +47,7 @@ void Phonebook:: displayContacts_as_table() const
 
 void Phonebook::disspalyContact(int index) const
 {
-    if (index >= 0 && index <= 8)
+    if (index >= 0 && index < 8)
     {
         if (_contacts[index].getIsThereInfoFlag() == 1)
         {

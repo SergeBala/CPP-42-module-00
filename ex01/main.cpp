@@ -1,4 +1,5 @@
 #include "phonebook.hpp"
+#include <sstream>
 
 int main()
 {
@@ -9,7 +10,7 @@ int main()
     {
         std::string command;
         std::cout << "Enter a command: ";
-        std::cin >> command;
+        std::getline(std::cin, command);
         if (command == "EXIT")
             break;
         else if (command == "ADD")
@@ -24,6 +25,10 @@ int main()
             std::cout << "Enter the index of the contact you want to display: ";
             std::cin >> index;
             phonebook.disspalyContact(index);
+        }
+        else
+        {
+            std::cout << "Invalid command" << std::endl;
         }
     }    
     return(0);

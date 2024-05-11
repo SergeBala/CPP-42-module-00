@@ -27,6 +27,7 @@ Contact::Contact(const Contact& other)
     _nickname = other._nickname;
     _phone_number = other._phone_number;
     _darkest_secret = other._darkest_secret;
+    _is_there_info_flag = other._is_there_info_flag;
 }
 
 // Assignment operator
@@ -39,6 +40,7 @@ Contact& Contact::operator=(const Contact& other)
         _nickname = other._nickname;
         _phone_number = other._phone_number;
         _darkest_secret = other._darkest_secret;
+        _is_there_info_flag = other._is_there_info_flag;
     }
     return *this;
 }
@@ -182,6 +184,8 @@ void Contact::setFieldsFromUserInput()
         resetFields();
         setFieldsFromUserInput();
     }
+    // printContactLineByLine();
+    // printContactAsTable();
 }
 
 void Contact::printContactLineByLine() const
@@ -189,8 +193,9 @@ void Contact::printContactLineByLine() const
     std::cout << "First name: " << _first_name << std::endl;
     std::cout << "Last name: " << _last_name << std::endl;
     std::cout << "Nickname: " << _nickname << std::endl;
-    std::cout << "Phone number" << _phone_number << std::endl;
+    std::cout << "Phone number: " << _phone_number << std::endl;
     std::cout << "Darkest secret: " << _darkest_secret << std::endl;
+    std::cout << "is_there_info_flag: " << _is_there_info_flag << std::endl;
 }
 
 void Contact::printContactAsTable() const

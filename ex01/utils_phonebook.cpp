@@ -25,7 +25,7 @@ namespace utils_phonebook
         }    
         else
         {
-            std::cout << my_string.substr(0, 10);
+            std::cout << my_string.substr(0, 9) << ".";
         }
     
     }
