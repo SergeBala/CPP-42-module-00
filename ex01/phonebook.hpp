@@ -16,7 +16,7 @@ public:
 
     void addContact(const Contact& new_contact);
     void displayContacts_as_table() const;
-    void disspalyContact(int index) const;
+    void disspalyContact(const std::string& str_index) const;
 };
 
 #endif

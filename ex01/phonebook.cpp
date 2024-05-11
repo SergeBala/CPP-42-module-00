@@ -45,8 +45,16 @@ void Phonebook:: displayContacts_as_table() const
     }
 }
 
-void Phonebook::disspalyContact(int index) const
+void Phonebook::disspalyContact(const std::string& str_index) const
 {
+    int index = 0;
+
+    if (!utils_phonebook::isStringNumeric(str_index))
+    {
+        std::cout << "Invalid index" << std::endl;
+        return;
+    }
+    index = std::stoi(str_index);
     if (index >= 0 && index < 8)
     {
         if (_contacts[index].getIsThereInfoFlag() == 1)

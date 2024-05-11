@@ -29,4 +29,15 @@ namespace utils_phonebook
         }
     
     }
+
+    bool isStringNumeric(const std::string& str)
+    {
+        for (std::string::const_iterator it = str.begin(); it != str.end(); ++it)
+        {
+            char c = *it;
+            if (!std::isdigit(c)) 
+                return false;
+        }
+        return true;
+    }
 }

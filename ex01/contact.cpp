@@ -129,7 +129,7 @@ void Contact::setFieldsFromUserInput()
     std::string darkest_secret;
 
     std::cout << "Enter first name: ";
-    std::cin >> first_name;
+    std::getline(std::cin, first_name);
     if (!utils_phonebook::isNonEmptyString(first_name))
     {
         first_name = "Unknown";
@@ -139,7 +139,7 @@ void Contact::setFieldsFromUserInput()
     setFirstName(first_name);
 
     std::cout << "Enter last name: ";
-    std::cin >> last_name;
+    std::getline(std::cin, last_name);
     if (!utils_phonebook::isNonEmptyString(last_name))
     {
         last_name = "Unknown";
@@ -149,7 +149,7 @@ void Contact::setFieldsFromUserInput()
     setLastName(last_name);
 
     std::cout << "Enter nickname: ";
-    std::cin >> nickname;
+    std::getline(std::cin, nickname);
     if (!utils_phonebook::isNonEmptyString(nickname))
     {
         nickname = "Unknown";
@@ -159,7 +159,7 @@ void Contact::setFieldsFromUserInput()
     setNickname(nickname);
 
     std::cout << "Enter phone number: ";
-    std::cin >> phone_number;
+    std::getline(std::cin, phone_number);
     if (!utils_phonebook::isNonEmptyString(phone_number))
     {
         phone_number = "Unknown";
@@ -169,7 +169,7 @@ void Contact::setFieldsFromUserInput()
     setPhoneNumber(phone_number);
 
     std::cout << "Enter darkest secret: ";
-    std::cin >> darkest_secret;
+    std::getline(std::cin, darkest_secret);
     if (!utils_phonebook::isNonEmptyString(darkest_secret))
     {
         darkest_secret = "Unknown";

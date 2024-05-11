@@ -7,6 +7,7 @@
 #include <string>
 #include <cctype>
 #include "utils_phonebook.hpp"
+#include <sstream>
 
 class Contact
 {

@@ -21,9 +21,9 @@ int main()
         else if (command == "SEARCH")
         {
             phonebook.displayContacts_as_table();
-            int index;
+            std::string index;
             std::cout << "Enter the index of the contact you want to display: ";
-            std::cin >> index;
+            std::getline(std::cin, index);
             phonebook.disspalyContact(index);
         }
         else
