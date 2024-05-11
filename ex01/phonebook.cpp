@@ -23,15 +23,6 @@ void Phonebook::addContact(const Contact& new_contact)
     _last_set_index = oldest_contact_index;
 }
 
-// void Phonebook::displayContacts() const
-// {//add logic to display only 10 characters of first name, last name and nickname
-//     std::cout << "Index     |First Name|Last Name |Nickname  " << std::endl;
-//     for (int i = 0; i <= _last_set_index; ++i)
-//     {
-
-//     }
-// }
-
 void Phonebook:: displayContacts_as_table() const
 {
     std::cout << "     Index|First Name| Last Name|  Nickname" << std::endl;

@@ -195,7 +195,7 @@ void Contact::printContactLineByLine() const
     std::cout << "Nickname: " << _nickname << std::endl;
     std::cout << "Phone number: " << _phone_number << std::endl;
     std::cout << "Darkest secret: " << _darkest_secret << std::endl;
-    std::cout << "is_there_info_flag: " << _is_there_info_flag << std::endl;
+    //std::cout << "is_there_info_flag: " << _is_there_info_flag << std::endl;
 }
 
 void Contact::printContactAsTable() const
