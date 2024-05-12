@@ -131,9 +131,7 @@ void Contact::setFieldsFromUserInput()
     std::cout << "Enter first name: ";
     std::getline(std::cin, first_name);
     if (!utils_phonebook::isNonEmptyString(first_name))
-    {
         first_name = "Unknown";
-    }
     else
         _is_there_info_flag = 1;
     setFirstName(first_name);
@@ -141,9 +139,7 @@ void Contact::setFieldsFromUserInput()
     std::cout << "Enter last name: ";
     std::getline(std::cin, last_name);
     if (!utils_phonebook::isNonEmptyString(last_name))
-    {
         last_name = "Unknown";
-    }
     else
         _is_there_info_flag = 1;
     setLastName(last_name);
@@ -151,9 +147,7 @@ void Contact::setFieldsFromUserInput()
     std::cout << "Enter nickname: ";
     std::getline(std::cin, nickname);
     if (!utils_phonebook::isNonEmptyString(nickname))
-    {
         nickname = "Unknown";
-    }
     else
         _is_there_info_flag = 1;
     setNickname(nickname);
@@ -161,9 +155,7 @@ void Contact::setFieldsFromUserInput()
     std::cout << "Enter phone number: ";
     std::getline(std::cin, phone_number);
     if (!utils_phonebook::isNonEmptyString(phone_number))
-    {
         phone_number = "Unknown";
-    }
     else
         _is_there_info_flag = 1;
     setPhoneNumber(phone_number);
@@ -171,9 +163,7 @@ void Contact::setFieldsFromUserInput()
     std::cout << "Enter darkest secret: ";
     std::getline(std::cin, darkest_secret);
     if (!utils_phonebook::isNonEmptyString(darkest_secret))
-    {
         darkest_secret = "Unknown";
-    }
     else
         _is_there_info_flag = 1;
     setDarkestSecret(darkest_secret);
@@ -183,6 +173,11 @@ void Contact::setFieldsFromUserInput()
         std::cout << "A contact has to have at least some info!" << std::endl;
         resetFields();
         setFieldsFromUserInput();
+    }
+    else
+    {
+        std::cout << "------------------------------------------------------" << std::endl;
+        std::cout << "New contact added ";
     }
     // printContactLineByLine();
     // printContactAsTable();

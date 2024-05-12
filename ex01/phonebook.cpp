@@ -20,6 +20,8 @@ void Phonebook::addContact(const Contact& new_contact)
     else
         oldest_contact_index = (_last_set_index + 1) % 8;
     _contacts[oldest_contact_index] = new_contact;
+    std::cout << "and stored in Phonebook at index [" << oldest_contact_index << "]" << std::endl;
+    std::cout << "------------------------------------------------------" << std::endl;
     _last_set_index = oldest_contact_index;
 }
 

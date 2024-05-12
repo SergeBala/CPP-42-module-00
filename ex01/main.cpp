@@ -12,11 +12,15 @@ int main()
         std::cout << "Enter a command: ";
         std::getline(std::cin, command);
         if (command == "EXIT")
+        {
+            std::cout << "Phonebook has just been deleted." << std::endl << "Bye!" << std::endl;
             break;
+        }
         else if (command == "ADD")
         {
             contact_for_input.setFieldsFromUserInput();
             phonebook.addContact(contact_for_input);
+            contact_for_input.resetFields();
         }
         else if (command == "SEARCH")
         {
