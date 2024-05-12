@@ -19,6 +19,8 @@ private:
     std::string _darkest_secret;
     int         _is_there_info_flag;
 
+    void check_if_empty_string_and_set_flag(std::string& str);
+
 public:
     // Constructor and Destructor
     Contact();

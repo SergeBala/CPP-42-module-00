@@ -120,6 +120,14 @@ void Contact::resetFields()
     _is_there_info_flag = 0;
 }
 
+void Contact::check_if_empty_string_and_set_flag(std::string& str)
+{
+    if (!utils_phonebook::isNonEmptyString(str))
+        str = "Unknown";
+    else
+        _is_there_info_flag = 1;
+}
+
 void Contact::setFieldsFromUserInput()
 {
     std::string first_name;
@@ -130,47 +138,32 @@ void Contact::setFieldsFromUserInput()
 
     std::cout << "Enter first name: ";
     std::getline(std::cin, first_name);
-    if (!utils_phonebook::isNonEmptyString(first_name))
-        first_name = "Unknown";
-    else
-        _is_there_info_flag = 1;
+    check_if_empty_string_and_set_flag(first_name);
     setFirstName(first_name);
 
     std::cout << "Enter last name: ";
     std::getline(std::cin, last_name);
-    if (!utils_phonebook::isNonEmptyString(last_name))
-        last_name = "Unknown";
-    else
-        _is_there_info_flag = 1;
+    check_if_empty_string_and_set_flag(last_name);
     setLastName(last_name);
 
     std::cout << "Enter nickname: ";
     std::getline(std::cin, nickname);
-    if (!utils_phonebook::isNonEmptyString(nickname))
-        nickname = "Unknown";
-    else
-        _is_there_info_flag = 1;
+    check_if_empty_string_and_set_flag(nickname);
     setNickname(nickname);
 
     std::cout << "Enter phone number: ";
     std::getline(std::cin, phone_number);
-    if (!utils_phonebook::isNonEmptyString(phone_number))
-        phone_number = "Unknown";
-    else
-        _is_there_info_flag = 1;
+    check_if_empty_string_and_set_flag(phone_number);
     setPhoneNumber(phone_number);
 
     std::cout << "Enter darkest secret: ";
     std::getline(std::cin, darkest_secret);
-    if (!utils_phonebook::isNonEmptyString(darkest_secret))
-        darkest_secret = "Unknown";
-    else
-        _is_there_info_flag = 1;
+    check_if_empty_string_and_set_flag(darkest_secret);
     setDarkestSecret(darkest_secret);
 
     if (_is_there_info_flag == 0)
     {
-        std::cout << "A contact has to have at least some info!" << std::endl;
+        std::cout << "A contact must have at least 1 non-empty field, let's try again!" << std::endl;
         resetFields();
         setFieldsFromUserInput();
     }
