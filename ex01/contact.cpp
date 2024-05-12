@@ -153,12 +153,12 @@ void Contact::setFieldsFromUserInput()
 
     std::cout << "Enter phone number (digits only): ";
     std::getline(std::cin, phone_number);
-    check_if_empty_string_and_set_flag(phone_number);
     while (!utils_phonebook::isStringNumeric(phone_number))
     {
         std::cout << "Phone number must contain only digits, re-enter phone number: ";
         std::getline(std::cin, phone_number);
     }
+    check_if_empty_string_and_set_flag(phone_number);
     setPhoneNumber(phone_number);
 
     std::cout << "Enter darkest secret: ";
