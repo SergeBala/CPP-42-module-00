@@ -156,7 +156,7 @@ void Contact::setFieldsFromUserInput()
     check_if_empty_string_and_set_flag(phone_number);
     while (!utils_phonebook::isStringNumeric(phone_number))
     {
-        std::cout << "Phone number must contain only digits, re-enter phone number:";
+        std::cout << "Phone number must contain only digits, re-enter phone number: ";
         std::getline(std::cin, phone_number);
     }
     setPhoneNumber(phone_number);
