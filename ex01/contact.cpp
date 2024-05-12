@@ -151,9 +151,14 @@ void Contact::setFieldsFromUserInput()
     check_if_empty_string_and_set_flag(nickname);
     setNickname(nickname);
 
-    std::cout << "Enter phone number: ";
+    std::cout << "Enter phone number (digits only): ";
     std::getline(std::cin, phone_number);
     check_if_empty_string_and_set_flag(phone_number);
+    while (!utils_phonebook::isStringNumeric(phone_number))
+    {
+        std::cout << "Phone number must contain only digits, re-enter phone number:";
+        std::getline(std::cin, phone_number);
+    }
     setPhoneNumber(phone_number);
 
     std::cout << "Enter darkest secret: ";
@@ -163,7 +168,7 @@ void Contact::setFieldsFromUserInput()
 
     if (_is_there_info_flag == 0)
     {
-        std::cout << "A contact must have at least 1 non-empty field, let's try again!" << std::endl;
+        std::cout << "A contact must have at least 1 non-empty field, let's try again: " << std::endl;
         resetFields();
         setFieldsFromUserInput();
     }
